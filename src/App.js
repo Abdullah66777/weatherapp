@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Weather from "./Weather";
 import "./App.css";
 //67e59d43-aaf8-4fdf-aa32-788cb82a1d0f
-function App() {
+const App = () => {
   const [countriesList, setCountryList] = useState([]);
   const [stateList, setStateList] = useState([]);
   const [citylist, setCityList] = useState([]);
@@ -46,6 +47,6 @@ function App() {
     console.log("b");
     console.log("c");
   }, []);
-}
+};
 
 export default App;
