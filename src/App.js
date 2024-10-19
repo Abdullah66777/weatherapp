@@ -1,13 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Weather from "./Weather";
 import Home from "./Home";
+import Navbar from "./Navbar";
 import "./App.css";
 
 const App = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>

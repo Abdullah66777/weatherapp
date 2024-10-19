@@ -1,7 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import App from "./App";
-import Home from "./Home";
 const Weather = ({ city, state, country }) => {
   const [weatherData, setWeatherData] = useState(null);
   const BASE_URL = "http://api.airvisual.com/v2"; // Base URL only
