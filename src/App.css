@@ -1,38 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .App {
-  text-align: center;
+  background-color: #ffffff; /* Light Sky Blue */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use flexbox for centering content */
+  flex-direction: column; /* Stack child elements vertically */
+}
+body {
+  background-color: white; /* White background for the body */
+  margin: 0; /* Remove default margin */
+  font-family: "Roboto", sans-serif; /* Optional: Set a default font */
+}
+.navbar {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+
+  background-color: #3e0d0d; /* Dark brownish color */
+  padding: 10px 20px; /* Reduce vertical padding for height */
+  position: relative; /* For positioning the logo */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the logo */
+.navbar img {
+  height: 30px; /* Adjust the height of the logo */
+  padding-right: 5px;
+  padding-left: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style for the nav title */
+h1 {
+  font-family: "Roboto", sans-serif; /* Use the selected font */
+  font-size: 20px; /* Adjust font size */
+  font-weight: 600;
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row; /* Stack elements vertically */
+  margin: 20px; /* Add some margin around the form */
+  justify-content: center; /* Center elements horizontally within the search bar */
+  align-items: center; /* Center items vertically */
+}
+.search input {
+  margin-bottom: 10px; /* Space between inputs */
+  padding: 8px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.search input:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+.search button {
+  padding: 8px 12px; /* Button padding */
+  background-color: #3e0d0d; /* Dark brownish color */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.search button:hover {
+  background-color: #5a2a2a; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.weather-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ebb3b327;
+  max-width: 800px; /* Adjust width as needed */
+  margin: 20px auto; /* Center the container */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+.weather-container p {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 5px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+.weather-container:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  background-color: #f3e9e900;
+}
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between title and timestamp */
+  align-items: center; /* Center items vertically */
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-details {
+  display: flex;
+  justify-content: space-between; /* Align items in a row */
+  margin-top: 20px; /* Space above weather details */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.temp-icon {
+  display: flex;
+  align-items: center; /* Align temperature text and icon */
+}
+
+.temp-icon img {
+  width: 50px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px; /* Space between temperature and icon */
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column; /* Stack additional info vertically */
+  margin-left: 20px; /* Space between temp-icon and additional-info */
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+  .search {
+    flex-direction: column; /* Stack input and button */
+    margin: 25px;
+  }
+  .search input {
+    flex: 1;
+    max-width: 200px;
+  }
+  .search button {
+    margin-left: 0; /* Center button */
+  }
+  .weather-container {
+    padding: 15px;
+    max-width: 80%;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .weather-details {
+    flex-direction: column; /* Stack weather details */
+  }
+  .temp-icon img {
+    width: 40px;
+    margin-left: 5px;
   }
 }

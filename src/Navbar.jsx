@@ -1,7 +1,8 @@
 const Navbar = () => {
   return (
-    <nav style={{ backgroundColor: "black", color: "white" }}>
-      <h1>Navbar</h1>
+    <nav className="navbar">
+      <img src="/rb_4291.png" alt="weatherapp" />
+      <h1>Climatic</h1>
     </nav>
   );
 };

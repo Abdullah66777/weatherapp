@@ -10,32 +10,34 @@ const Home = () => {
     setShowWeather(true);
   };
   return (
-    <div className="app">
-      <h1>Weather forecast app</h1>
-      <div>
-        <input
-          placeholder="Enter country"
-          value={country}
-          onChange={(e) => setCountry(e.target.value)}
-        />
-        <input
-          placeholder="Enter state"
-          value={state}
-          onChange={(e) => setState(e.target.value)}
-        />
-        <input
-          placeholder="Enter city"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button type="button" onClick={handleSearch}>
-          Search
-        </button>
+    <body>
+      <div className="search">
+        <div>
+          Enter location :
+          <input
+            placeholder="Enter country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
+          <input
+            placeholder="Enter state"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+          />
+          <input
+            placeholder="Enter city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button type="button" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
       </div>
       <div>
         {showWeather && <Weather country={country} state={state} city={city} />}
       </div>
-    </div>
+    </body>
   );
 };
 

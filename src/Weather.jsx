@@ -28,27 +28,66 @@ const Weather = ({ city, state, country }) => {
   }, [city, state, country]);
   return (
     <div>
-      <h2>
-        Weather Data for {city}, {state}, {country}
-      </h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingLeft: "25px",
+        }}
+      >
+        <h2>
+          Weather Data for {city}, {state}, {country}
+        </h2>
+      </div>
+
       {weatherData ? (
         <div>
-          <h3>Current Weather:</h3>
-          <p>Temperature: {weatherData.current.weather.tp}°C</p>
-          <p>Pressure: {weatherData.current.weather.pr} hPa</p>
-          <p>Humidity: {weatherData.current.weather.hu}%</p>
-          <p>Wind Speed: {weatherData.current.weather.ws} m/s</p>
-          <p>Wind Direction: {weatherData.current.weather.wd}°</p>
-          <p>Weather Icon Code: {weatherData.current.weather.ic}</p>
+          <div className="weather-container">
+            <div className="header">
+              <h2>Current Weather:</h2>
+              <p>{new Date(weatherData.current.weather.ts).toLocaleString()}</p>
+            </div>
 
-          <div>
-            <h3>Pollution Data:</h3>
-            <p>AQI US: {weatherData.current.pollution.aqius}</p>
-            <p>Main Pollutant US AQI: {weatherData.current.pollution.mainus}</p>
-            <p>AQI CN: {weatherData.current.pollution.aqicn}</p>
-            <p>
-              Main Pollutant Chinese AQI: {weatherData.current.pollution.maincn}
-            </p>
+            <div className="weather-details">
+              <div className="temp-icon">
+                <img
+                  src={`https://openweathermap.org/img/wn/${weatherData.current.weather.ic}@4x.png`}
+                  alt="Weather Icon"
+                  style={{ width: "150px", height: "150px" }}
+                />
+                <h2 style={{ fontSize: "42px", fontWeight: "bold" }}>
+                  {weatherData.current.weather.tp}°C
+                </h2>
+              </div>
+              <div className="additional-info">
+                <p>Wind Speed: {weatherData.current.weather.ws} m/s</p>
+                <p>Wind Direction: {weatherData.current.weather.wd}°</p>
+                <p>Humidity: {weatherData.current.weather.hu}%</p>
+                <p>Pressure: {weatherData.current.weather.pr} hPa</p>
+              </div>
+            </div>
+          </div>
+          <div className="weather-container">
+            <h2
+              style={{
+                borderBottom: "1px solid lightgray",
+                paddingBottom: "5px",
+              }}
+            >
+              Pollution Data:
+            </h2>
+            <div style={{ paddingLeft: "30px" }}>
+              <p>AQI US: {weatherData.current.pollution.aqius}</p>
+              <p>
+                Main Pollutant US AQI: {weatherData.current.pollution.mainus}
+              </p>
+              <p>AQI CN: {weatherData.current.pollution.aqicn}</p>
+              <p>
+                Main Pollutant Chinese AQI:{" "}
+                {weatherData.current.pollution.maincn}
+              </p>
+            </div>
           </div>
         </div>
       ) : (
