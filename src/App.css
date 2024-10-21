@@ -43,6 +43,14 @@ h1 {
   justify-content: center; /* Center elements horizontally within the search bar */
   align-items: center; /* Center items vertically */
 }
+.search select {
+  margin-bottom: 10px; /* Space between inputs */
+  padding: 8px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 .search input {
   margin-bottom: 10px; /* Space between inputs */
   padding: 8px; /* Padding inside inputs */
@@ -52,6 +60,10 @@ h1 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .search input:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+.search select:hover {
   transform: scale(1.05); /* Slight zoom effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
