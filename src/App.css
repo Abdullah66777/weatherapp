@@ -19,7 +19,12 @@ body {
   padding: 10px 20px; /* Reduce vertical padding for height */
   position: relative; /* For positioning the logo */
 }
-
+.navbar p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: white;
+  margin-left: 50px;
+}
 /* Style for the logo */
 .navbar img {
   height: 30px; /* Adjust the height of the logo */

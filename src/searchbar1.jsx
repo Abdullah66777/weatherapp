@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Weather from "./Weather";
+import Navbar from "./Navbar";
 const Searchbar1 = () => {
   const [countriesList, setCountryList] = useState([]);
   const [stateList, setStateList] = useState([]);
@@ -76,6 +77,7 @@ const Searchbar1 = () => {
 
   return (
     <body>
+      <Navbar state={selectedState} city={selectedCity} />
       <div className="search">
         <div>
           <h2>Select Location</h2>
